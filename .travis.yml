@@ -4,7 +4,7 @@ language: generic
 services:
   - docker
 before_install:
-  - docker build -t rafiqueawan/docker-react -f Dockerfile.dev .
+  - docker build -e CI=true -t rafiqueawan/docker-react -f Dockerfile.dev .
 
 script:
   - docker run rafiqueawan/docker-react npm run test -- --coverage
